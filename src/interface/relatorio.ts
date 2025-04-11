@@ -8,3 +8,4 @@ export type IRelatorioRaw = {
 }
 
 export type IRelatorio = IRelatorioRaw & IObjectRaw
+ 
