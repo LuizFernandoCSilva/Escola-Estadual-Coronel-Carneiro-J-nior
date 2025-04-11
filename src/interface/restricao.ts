@@ -9,4 +9,4 @@ export type IRestricaoRaw = {
     endDate: Date | null
 }
 
-export type IRestricao = IRestricaoRaw & IObjectRaw
+export type IRestricao = IRestricaoRaw & IObjectRaw 
