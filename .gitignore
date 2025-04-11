@@ -6,3 +6,4 @@ package-lock.json
 nodemon.json
 .env
 package.json
+tsconfig.json
