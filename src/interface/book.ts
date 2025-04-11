@@ -10,7 +10,7 @@ export type IBookRaw = {
     categoriaId: number
     libraryId: number
     quantity: number
-    status: string
+    status: string 
 }
 
 export type IBook = IBookRaw & IObjectRaw
