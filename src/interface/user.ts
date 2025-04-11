@@ -9,4 +9,4 @@ export type IUserRaw = {
     status: string
 }
 
-export type IUser = IUserRaw & IObjectRaw
+export type IUser = IUserRaw & IObjectRaw 
