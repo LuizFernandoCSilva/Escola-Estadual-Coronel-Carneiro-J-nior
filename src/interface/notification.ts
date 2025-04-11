@@ -9,3 +9,4 @@ export type INotificationRaw = {
 }
 
 export type INotification = INotificationRaw & IObjectRaw  
+ 
