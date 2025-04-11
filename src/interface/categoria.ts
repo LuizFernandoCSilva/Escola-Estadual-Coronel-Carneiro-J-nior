@@ -5,4 +5,4 @@ export type ICategoriaRaw = {
     description: string
 }
 
-export type ICategoria = ICategoriaRaw & IObjectRaw
+export type ICategoria = ICategoriaRaw & IObjectRaw 
