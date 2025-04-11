@@ -10,4 +10,4 @@ export type IEmprestimoRaw = {
     returnDate: Date | null
 }
 
-export type IEmprestimo = IEmprestimoRaw & IObjectRaw
+export type IEmprestimo = IEmprestimoRaw & IObjectRaw 
