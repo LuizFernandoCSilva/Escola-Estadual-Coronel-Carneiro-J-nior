@@ -12,7 +12,7 @@ export class Book extends ObjectRaw implements IBook {
     libraryId: number;
     quantity: number;
     status: string;
-
+ 
     constructor(book: IBook) {
         super(book);
         this.title = book.title;
