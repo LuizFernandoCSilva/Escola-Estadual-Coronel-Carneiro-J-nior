@@ -8,4 +8,4 @@ export type ILibraryRaw = {
 }
 
 
-export type ILibrary = ILibraryRaw & IObjectRaw
+export type ILibrary = ILibraryRaw & IObjectRaw 
