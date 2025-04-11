@@ -7,4 +7,4 @@ export type IReservaRaw = {
     startDate: Date
 }
 
-export type IReserva = IReservaRaw & IObjectRaw
+export type IReserva = IReservaRaw & IObjectRaw 
