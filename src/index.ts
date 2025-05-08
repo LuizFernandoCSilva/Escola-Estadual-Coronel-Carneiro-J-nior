@@ -6,8 +6,8 @@ const senha = '123'
 
 
 async function hashPassword(senha: string): Promise<string> {
-  const salt = await bcrypt.genSalt(10);  // Gera um salt com 10 rounds
-  const hashedPassword = await bcrypt.hash(senha, salt);  // Gera o hash da senha
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash(senha, salt);
   return hashedPassword;
 }
 
