@@ -1,0 +1,28 @@
+{
+  "name": "escola-estadual-coronel-carneiro-j-nior",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000E\u0000s\u0000c\u0000o\u0000l\u0000a\u0000-\u0000E\u0000s\u0000t\u0000a\u0000d\u0000u\u0000a\u0000l\u0000-\u0000C\u0000o\u0000r\u0000o\u0000n\u0000e\u0000l\u0000-\u0000C\u0000a\u0000r\u0000n\u0000e\u0000i\u0000r\u0000o\u0000-\u0000J\u0000-\u0000n\u0000i\u0000o\u0000r\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "seed": "node prisma/seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^22.15.15",
+    "eslint": "^9.26.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^6.7.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.7.0",
+    "bcrypt": "^5.1.1"
+  }
+}
