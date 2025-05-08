@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./node_modules/@prisma/client" 
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int            @id @default(autoincrement())
+  name         String
+  email        String         @unique
+  password     String
+  phone        String
+  type         String
+  status       String
+  emprestimos  Emprestimo[]
+  reservas     Reserva[]
+  notificacoes Notification[]
+  relatorios   Relatorio[]
+  restricoes   Restricao[]
+}
+
+model Book {
+  id            Int      @id @default(autoincrement())
+  title         String
+  autor         String
+  anoPublicacao DateTime
+  isbn          String   @unique
+  editora       String
+  descricao     String
+  quantity      Int
+  status        String
+  categoriaId   Int
+  libraryId     Int
+
+  categoria Categoria @relation(fields: [categoriaId], references: [id])
+  library   Library   @relation(fields: [libraryId], references: [id])
+
+  emprestimos Emprestimo[]
+  reservas    Reserva[]
+  relatorios  Relatorio[]
+  restricoes  Restricao[]
+}
+
+model Categoria {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  description String
+  books       Book[]
+}
+
+model Library {
+  id            Int          @id @default(autoincrement())
+  name          String
+  quantityBooks Int
+  rows          Int
+  shelves       Int
+  books         Book[]
+  Emprestimo    Emprestimo[]
+}
+
+model Emprestimo {
+  id         Int       @id @default(autoincrement())
+  userId     Int
+  bookId     Int
+  libraryId  Int
+  status     String
+  startDate  DateTime
+  endDate    DateTime
+  returnDate DateTime?
+
+  user    User    @relation(fields: [userId], references: [id])
+  book    Book    @relation(fields: [bookId], references: [id])
+  library Library @relation(fields: [libraryId], references: [id])
+}
+
+model Reserva {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  bookId    Int
+  status    String
+  startDate DateTime
+
+  user User @relation(fields: [userId], references: [id])
+  book Book @relation(fields: [bookId], references: [id])
+}
+
+model Notification {
+  id      Int    @id @default(autoincrement())
+  userId  Int
+  message String
+  type    String
+  status  String
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Relatorio {
+  id           Int      @id @default(autoincrement())
+  userId       Int
+  bookId       Int
+  type         String
+  dataGeration DateTime
+
+  user User @relation(fields: [userId], references: [id])
+  book Book @relation(fields: [bookId], references: [id])
+}
+
+model Restricao {
+  id         Int       @id @default(autoincrement())
+  userId     Int
+  bookId     Int
+  motivation String
+  status     String
+  startDate  DateTime
+  endDate    DateTime?
+
+  user User @relation(fields: [userId], references: [id])
+  book Book @relation(fields: [bookId], references: [id])
+}
